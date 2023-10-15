@@ -1,4 +1,3 @@
-
 import argparse
 from solvers.depth_first_search import solver
 
