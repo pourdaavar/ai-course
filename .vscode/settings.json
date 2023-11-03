@@ -1,0 +1,6 @@
+{
+  "cSpell.words": ["defuzzified", "defuzzify", "fuzzifiation", "fuzzify"],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  }
+}
