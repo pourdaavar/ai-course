@@ -60,37 +60,37 @@ print(f"Report:\n{report}")
 
 pos_prob = prediction_prob[:, 1]
 
-# thresholds = np.arange(0.0, 1.1, 0.05)
-# true_pos, false_pos = [0]*len(thresholds), [0]*len(thresholds)
+thresholds = np.arange(0.0, 1.1, 0.05)
+true_pos, false_pos = [0]*len(thresholds), [0]*len(thresholds)
 
 
-# for pred, y in zip(pos_prob, Y_test):
-#     for i, threshold in enumerate(thresholds):
-#         if pred >= threshold:
-#             if y == 1:
-#                 true_pos[i] += 1
-#             else:
-#                 false_pos[i] += 1
-#         else:
-#             break
+for pred, y in zip(pos_prob, Y_test):
+    for i, threshold in enumerate(thresholds):
+        if pred >= threshold:
+            if y == 1:
+                true_pos[i] += 1
+            else:
+                false_pos[i] += 1
+        else:
+            break
 
-# n_pos_test = (Y_test == 1).sum()
-# n_neg_test = (Y_test == 0).sum()
-# true_pos_rate = [tp / n_pos_test for tp in true_pos]
-# false_pos_rate = [fp / n_neg_test for fp in false_pos]
+n_pos_test = (Y_test == 1).sum()
+n_neg_test = (Y_test == 0).sum()
+true_pos_rate = [tp / n_pos_test for tp in true_pos]
+false_pos_rate = [fp / n_neg_test for fp in false_pos]
 
 
-# plt.figure()
-# lw = 2
-# plt.plot(false_pos_rate, true_pos_rate, color='darkorange', lw=lw)
+plt.figure()
+lw = 2
+plt.plot(false_pos_rate, true_pos_rate, color='darkorange', lw=lw)
 # plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-# plt.xlim([0.0, 1.0])
-# plt.ylim([0.0, 1.05])
-# plt.xlabel('False Positive Rate')
-# plt.ylabel('True Positive Rate')
-# plt.title('Receiver Operating Characteristic')
-# plt.legend(loc="lower right")
-# plt.show()
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc="lower right")
+plt.show()
 
 
 print(f"ROC AUC: {roc_auc_score(Y_test, pos_prob):.3f}")
