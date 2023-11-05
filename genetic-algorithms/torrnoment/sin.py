@@ -37,7 +37,10 @@ def decode_chromosome(chromosome, x_len, y_len):
     x = int(binary_x, 2)
     y = int(binary_y, 2)
 
-    return x / (2 ** x_len), y / (2 ** y_len)
+    normalized_x = x / (2 ** x_len)
+    normalized_y = y / (2 ** y_len)
+
+    return normalized_x, normalized_y
 
 
 def objective_function(x, y):
