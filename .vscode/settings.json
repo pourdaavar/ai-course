@@ -1,5 +1,13 @@
 {
-  "cSpell.words": ["defuzzified", "defuzzify", "fuzzifiation", "fuzzify"],
+  "cSpell.words": [
+    "defuzzified",
+    "defuzzify",
+    "fuzzifiation",
+    "fuzzify",
+    "Multinomial",
+    "ucimlrepo",
+    "ucirepo"
+  ],
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
   }
